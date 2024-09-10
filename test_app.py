@@ -1,9 +1,9 @@
 import unittest
-from app import app
+import app
 
 class TestCurrencyAPI(unittest.TestCase):
     def setUp(self):
-        self.app = app.test_client()
+        self.app = app.app.test_client()  # Используем app.app для обращения к Flask приложению
         self.app.testing = True
 
     def test_currency_rate(self):
